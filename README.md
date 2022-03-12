@@ -29,7 +29,7 @@ mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')" && cd "$_" 
 
 
 ##dailytreeoutput
-
+```
 mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')" && cd "$_"
 
 i=1
@@ -38,11 +38,12 @@ for i in {1..7}
 do
    tree /mnt/disk$i > disk$i.txt
 done
-
+```
+##backticks make codeblocks in markup
 
 ##compareoutput
 
-mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')/New Files" && cd "$_"
+```mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')/New Files" && cd "$_"
 
 yest=$( date -d "yesterday 13:00 " '+%Y-%m-%d' )
 
@@ -52,5 +53,6 @@ for i in {1..7}
 do
    sort "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/"$(date '+%Y-%m-%d')"/disk$i.txt" "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/"$yest"/disk$i.txt" | uniq -u > "disk$i.txt"
 done
+```
 
 find . -type f -empty -print -delete
