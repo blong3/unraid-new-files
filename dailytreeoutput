@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')" && cd "$_"
+
+i=1
+
+for i in {1..7}
+do
+   tree -L 4 /mnt/disk$i > disk$i.txt
+done
