@@ -1,0 +1,12 @@
+#!/bin/bash
+
+mkdir "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/$(date '+%Y-%m-%d')/New Files" && cd "$_"
+
+yest=$( date -d "yesterday 13:00 " '+%Y-%m-%d' )
+
+i=1
+
+for i in {1..7}
+do
+   sort "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/"$(date '+%Y-%m-%d')"/disk$i.txt" "/mnt/remotes/FRACTAL_Plex/DATA LIST TREE/"$yest"/disk$i.txt" | uniq -u > "disk$i.txt"
+done
